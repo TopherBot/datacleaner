@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datacleaner"
+version = "0.1.0"
+description = "CLI for cleaning CSV/TSV files"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "{{author}}", email = "{{email}}"}]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["click>=8.0", "pandas>=2.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.5"]
+
+[project.scripts]
+# Allows `datacleaner` command after pip install -e .
+	datacleaner = "datacleaner.cli:main"
